@@ -37,15 +37,13 @@ public class Rotate : MonoBehaviour {
 		}
 		transform.Rotate(0, -torsoZ.z * rotationAmount, 0);
 
-
-		//Rotate forward
+		//Rotate forward (forward and backwards leaning)
 		torsoForward = new Vector3(skeletonScript.Torso.transform.localEulerAngles.x, transform.localEulerAngles.y, transform.localEulerAngles.z);
 		//Debug.Log(torsoForward.x);
 		if(torsoForward.x>180){
 			torsoForward.x = torsoForward.x-360;
 		}
 		transform.Rotate(torsoForward.x * rotationAmountFwd, 0, 0);
-
 		//Debug.Log(torsoZ.z);
 
 		//Defining the speed/velocity of the right hand
